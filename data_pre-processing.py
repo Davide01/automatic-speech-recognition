@@ -239,18 +239,21 @@ print("STEP 3 FINISHED")
 # Pickle pre-processed data
 #######################################
 """
-print("STEP 3 Pickle pre-processed data:")
+print("STEP 4 Pickle pre-processed data:")
 
 import pickle
 
-training_frames = "raw_wave_training_frames"
-validation_frames = "raw_wave_validation_frames"
+training_frames_name = "raw_wave_training_frames.pickle"
+validation_frames_name = "raw_wave_validation_frames.pickle"
 
 # open the file for writing
-training_fileObject = open(training_frames,'wb') 
-validation_fileObject = open(validation_frames,'wb') 
+training_fileObject = open(training_frames_name,'wb') 
+validation_fileObject = open(validation_frames_name,'wb') 
 
 pickle.dump(training_frames,training_fileObject)
-pickle.dump(training_frames,validation_fileObject)          
+pickle.dump(validation_frames,validation_fileObject)          
+
+training_fileObject.close()
+validation_fileObject.close()
 
 print("STEP 4 FINISHED")
